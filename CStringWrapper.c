@@ -3,8 +3,8 @@
 CString *cstring_new(const char *str)
 {
     int len = strlen(str);
-    CString *tmp = malloc((len + 1) + sizeof(int));
-    tmp->string_ = malloc(len + 1);
+    CString *tmp= (CString*) malloc((len + 1));
+    tmp->string_ = (char*) malloc(len + 1);
     memcpy(tmp->string_, str, len);
     tmp->length_ = len;
     return tmp;
